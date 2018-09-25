@@ -3,14 +3,14 @@ os:
   - linux
 services:
   - docker
-addons:
-  postgresql: "10.5"
 jdk:
   - oraclejdk10
 env:
   global:
   - secure: "fW+4/SB87CckhppK9aq4yMc0XxqIbwriAH3WLyL9FkW2bM69fU4Ac2NRABHFX+5Ft96CNHXvqKTu3zzoIY/3q/YbTAQYcol2Nx0ir5uLY8tf5Wbcffz0hlmRMFdUjSlY1tqePWWS3SDaegRWpsOR1M381Xwpwrp2kd0ZEBnNo7fleBrUJi5uTJ+oFq8++802gh8tE6a758k7ZdSPwDZBAbomBfvuR2A5GiLUBZPlNooc4/q2NVwi/R+SnQaFmSVJziMLzfXlyBwUptgoju/rgXeQOAidkqlI5p/rFRcR+M/HhISinNdLjyWN2Tk6NSJWZSHba0ACzkQxsZxRP0B3Brk+mLmJHYD8hhzugCzlpSrAYLaOtNo9rE62wzKoWYUqHS7Vyv37/z4bCofRP9cMIWLaOBJImgvvgwR5zIKEA6cUP0O97H7FRYEKFzLNjkJ0hAmIWcSGmMFacKqboMjcNDXwbyU6OQIdF8AfH0JwCTD3oLwRkIM8lDrK9HXOkkxb/b6vGRlsfmb/5QD2hOjH2pF5RU1gGrGlbdMYkkqrsXcaf4Fy+EzBfw1L0KKrV2JeajRjbuBpmqWy8mhPC5fmuSxpaEJwXDCKVU4n0SSwk4GDRxfmFjSwbi05MrAgAy5C85dy5VP2fQQEjOsh5RtLw4ICbFl1D0F9rGskcVrwH9I="
 
+before_script:
+  - sudo /etc/init.d/postgresql stop
 script:
   - git clone https://${USERPASS}@gitlab.com/liquibet/kobayashi.git 
   - cd kobayashi/katana
