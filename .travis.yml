@@ -3,6 +3,8 @@ os:
   - linux
 services:
   - docker
+addons:
+  postgresql: "10.5"
 jdk:
   - oraclejdk10
 env:
