@@ -11,5 +11,5 @@ env:
 
 script:
   - git clone https://${USERPASS}@gitlab.com/liquibet/kobayashi.git 
-  - cd kobayashi
+  - cd kobayashi/katana
   - ./gradlew build verify --no-daemon --info --stacktrace
