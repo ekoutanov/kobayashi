@@ -1,0 +1,15 @@
+language: java
+os:
+  - linux
+services:
+  - docker
+jdk:
+  - oraclejdk10
+env:
+  userpass:
+    secure: "nB0yVMi2eq6X+mtWLftLdcX+rq7zAJhM3dhX80zRSS7q98G4jU8Q61B8WQF7HrMKlTyhhy9/j0xvk6AGHt5MW9ux1lDiNgw7y42T+ShtTIJ1uz/GC+3urxBMQ2ySkJJ9/izfYmxLG4vVyPrs6ODOQXPXZPdorru9D6JpA24ilruUklRGJl2Mw8F72oqEeRY3K9Xf8jRU1fvrzNoMvS7UF9CEvYJsp+1ZC27q5aGGC04rXpWxB2jB1DgnnqrDbbvABi3CF/nRMIT5tZhZwiGjHmc+xVQULsa5yoEyk6nDrmcZeMcPa5sls9MgaQUNJme/O1UjaDe5xXK9EpZliYcA9snMJTy5mhjujFKsus7qYRGb1Q4U+9M28sHrF3rVyx3m+RWiMB51r2ItMbK0+nmQGO1pKWUoAe2KcQHjlb3tvz6Ml9Abk6s1jg/qgnrgJthuLZh96nHe+RHs8sFoGANTItxLPKQwZXNcaGMNo1F3RAJLFCdvD9sbYNzCbj2frQ1JRBGC7uuPv3Jhz/LnGaNrl4iU0I9wcVeFaKtYXALPsGvMVbHLIszNZe4iPtBA+GjBAynefiTWnRPwijAHKNsPtVh0iFb4gacRRirUrRAi4foCIxFFMn6lgA30Q02OM7E1L8/0vNPV9HdfCpsmCfeeXxOe+nW8os0vhMgu6NxHYhk="
+
+script:
+  - git clone https://${}@gitlab.com/liquibet/kobayashi.git 
+  - cd kobayashi
+  - ./gradlew build verify --no-daemon --info --stacktrace
